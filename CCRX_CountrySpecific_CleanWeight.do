@@ -39,9 +39,9 @@ Section 2 is questions/variables only in one country
 */
 
 
-local level1 state
-local level2 lga
-local level3 locality
+local level1 region
+local level2 county
+*local level3 locality
 *local level4 location
 
 
@@ -53,7 +53,7 @@ replace doi=manual_date if manual_date!="." & manual_date!=""
 
 split doi, gen(doisplit_)
 capture drop wrongdate
-gen wrongdate=1 if doisplit_3!="2018"
+gen wrongdate=1 if doisplit_3!="2019"
 replace wrongdate=1 if doisplit_1!="Apr" & doisplit_1!="May" & doisplit_1!="Jun" & doisplit_1!=""
 *If survey spans across 2 years
 /*replace wrongdate=1 if doisplit_3!="2018"
@@ -99,7 +99,7 @@ label define walls_list 11 no_walls 12 cane_palm 13 dirt 21 bamboo_mud 22 stone_
 encode walls, gen(wallsv2) lab(walls_list)
 
 *Language 
-capture label define language_list 1 english 2 hausa 3 igbo 4 yoruba 5 pidgin 96 other
+capture label define language_list 1 english 2 danish 96 other
 encode survey_language, gen(survey_languagev2) lab(language_list)
 label var survey_languagev2 "Language of household interview"
 
@@ -110,7 +110,7 @@ label var survey_languagev2 "Language of household interview"
 **Country specific female questionnaire changes
 *Year and month of data collection.  
 
-gen FQwrongdate=1 if thisyear!=2018 & thisyear!=.
+gen FQwrongdate=1 if thisyear!=2019 & thisyear!=.
 replace FQwrongdate=1 if thismonth!=4 & thismonth!=5 & thismonth!=6 & thismonth!=. 
 *If survey spans across 2 years
 /*replace FQwrongdate=1 if thisyear!=2018 & thisyear!=.
@@ -174,7 +174,7 @@ label define providers_list 11 govt_hosp 12 govt_health_center 13 FP_clinic 14 m
 	capture encode fp_provider_rw, gen(fp_provider_rwv2) lab(providers_list)
 	
 *FQ Language
-capture label define language_list 1 english 2 hausa 3 igbo 4 yoruba 5 pidgin 96 other
+capture label define language_list 1 english 2 danish 96 other
 capture encode FQsurvey_language, gen(FQsurvey_languagev2) lab(language_list)
 capture label var FQsurvey_language "Language of Female interview"
 
