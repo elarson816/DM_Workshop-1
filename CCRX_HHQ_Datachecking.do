@@ -251,7 +251,7 @@ encode water_sources_main_other, gen(water_sources_main_otherv2) lab(water_sourc
 	
 replace sanitation_main=sanitation_all if number_of_sanitation==1
 label define sanitation_list 1 flush_sewer 2 flush_septic 3 flush_elsewhere 4 flush_unknown 5 vip ///
-	6 pit_with_slab 7 pit_no_slab 8 composting 9 bucket 10 hanging 11 other 12 bush 13 flushpit 14 bush_water_body -99 "-99" 
+	6 pit_with_slab 7 pit_no_slab 8 composting 9 bucket 10 hanging 11 other 13 flushpit -99 "-99" 
 encode sanitation_main, gen(sanitation_mainv2) lab(sanitation_list)
 
 label define handwash_list 1 observed_fixed 2 observed_mobile 3 not_here 4 no_permission ///
