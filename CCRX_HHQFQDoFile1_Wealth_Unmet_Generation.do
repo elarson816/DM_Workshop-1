@@ -159,6 +159,7 @@ recode roof_finished .=0
 * Generate dichotomous water source variables
 tab water_sources_all, mis
 gen water_pipe2dwelling= regexm(water_sources_all, ["piped_indoor"]) 
+gen water_pipe2yard= regexm(water_sources_all, ["piped_yard"]) 
 gen water_publictap= regexm(water_sources_all, ["piped_public"]) 
 gen water_tubewell= regexm(water_sources_all, ["tubewell"]) 
 gen water_protectedwell= regexm(water_sources_all, ["protected_dug_well"]) 
