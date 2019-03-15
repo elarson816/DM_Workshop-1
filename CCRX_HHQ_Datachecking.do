@@ -184,7 +184,6 @@ label var sanitation_frequency_cc 			"How often use toilet facility"
 label var shared_san 						"Share toilet facility with other households/public"
 label var shared_san_hh						"Number of HH that share toilet facility"
 
-label var bush_use							"How many people use bush"
 label var minAge							"Minimum age of children listed in household"
 label var thankyou							"Thank you"
 label var locationLatitude					"Latitude"
