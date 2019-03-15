@@ -218,7 +218,6 @@ destring number_of_sanitation, replace
 destring shared_san_hh, replace
 destring water_collection*, replace
 
-destring bush_use, replace
 destring minAge, replace
 destring consent_obtained, replace
 
