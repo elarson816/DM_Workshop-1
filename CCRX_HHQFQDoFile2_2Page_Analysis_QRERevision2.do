@@ -59,6 +59,8 @@ global date=subinstr("`c_today'", " ", "",.)
 * Create log
 log using "`CCRX'_HHQFQ_2Page_Analysis.log", replace
 
+* Additional code
+
 *******************************************************************************
 * PREPARE DATA FOR ANALYSIS
 *******************************************************************************
